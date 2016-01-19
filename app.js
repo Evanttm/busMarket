@@ -1,7 +1,3 @@
-// window.onload = choosePic1;
-//window.onload = choosePic2;
-//window.onload = choosePic3;
-
 
 var imagesArray = ["bagWeek3.jpg ", "banana.jpg ", "boots.jpg", "chair.jpg", "cthulhu.jpg", "dragon.jpg", "pen.jpg", "scissors.jpg", "shark.jpg", "sweep.png", "unicorn.jpg", "usb.gif", "water-can.jpg", "wine-glass.jpg"];
 
@@ -10,14 +6,14 @@ function choosePic1() {
      document.getElementById("firstImage").src= 'week-3Assets/' + imagesArray[randomNum];
    }
 
-   function choosePic2() {
-        var randomNum = Math.floor(Math.random() * imagesArray.length);
-        document.getElementById("secondImage").src= 'week-3Assets/' + imagesArray[randomNum];
+function choosePic2() {
+      var randomNum = Math.floor(Math.random() * imagesArray.length);
+      document.getElementById("secondImage").src= 'week-3Assets/' + imagesArray[randomNum];
       }
 
-      function choosePic3() {
-           var randomNum = Math.floor(Math.random() * imagesArray.length);
-           document.getElementById("thirdImage").src= 'week-3Assets/' + imagesArray[randomNum];
+function choosePic3() {
+        var randomNum = Math.floor(Math.random() * imagesArray.length);
+        document.getElementById("thirdImage").src= 'week-3Assets/' + imagesArray[randomNum];
          }
 
          choosePic3();
