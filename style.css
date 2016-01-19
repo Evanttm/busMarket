@@ -1,0 +1,50 @@
+#image-container{
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+box1{
+  height: 300px
+  width: 250px;
+  background-color: red;
+  float: left;
+}
+box2{
+  height: 300px
+  width: 250px;
+  background-color: orange;
+  float: left;
+  margin-left: 25px;
+}
+box3{
+  height: 300px
+  width: 250px;
+  background-color: pink;
+  float: right;
+}
+#firstImage{
+  height: 250px;
+  width:250px;
+  background-color: red;
+}
+
+#secondImage {
+  height: 250px;
+  width:250px;
+  background-color: black;
+}
+
+#thirdImage {
+  height: 250px;
+  width:250px;
+  background-color: pink;
+}
+
+header{
+  text-align: center;
+  background-color: red;
+}
