@@ -15,7 +15,7 @@ function choosePic3() {
         var randomNum = Math.floor(Math.random() * imagesArray.length);
         document.getElementById("thirdImage").src= 'week-3Assets/' + imagesArray[randomNum];
          }
-//--------------Calling Functions-----------------------------------------------
+//--------------Calling Functions choosePic -1 -2 -3 ---------------------------
          choosePic3();
          choosePic2();
          choosePic1();
@@ -35,18 +35,22 @@ function choosePic3() {
          function handleClickOnFirst() {
            firstClicks++;
            first.textContent = 'First was clicked ' + firstClicks + ' times';
+           console.log('firstClicks')
          }
 
 
          function handleClickOnSecond() {
            secondClicks += 1;
-           second.textContent = 'Second was clicked ' + secondClicks + ' times';
+           //second.textContent = 'Second was clicked ' + secondClicks + ' times';
+           console.log('secondClicks');
          }
 
          function handleClickOnThird() {
            thirdClicks += 1;
            third.textContent = 'Third was clicked ' + thirdClicks + ' times';
+           console.log('thirdClicks');
          }
+         var totalClicks = ['firstClicks', 'secondClicks', 'thirdClicks'];
 
 //------------------------------------------------------------------------------
 
@@ -64,11 +68,14 @@ function choosePic3() {
         //   }
 
 
+//--------------------Prevents the repeat of images-----------------------------
 
+while (firstImage.src  === secondImage.src || secondImage.src === thirdImage.src || thirdImage.src === firstImage.src) {
 
-// while (firstImage === secondImage || secondImage === thirdImage || thirdImage === firstImage) {
-//
-// }
+    choosePic1();
+    choosePic2();
+    choosePic3();
+ }
 //
 //
 //
