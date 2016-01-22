@@ -48,6 +48,9 @@ function getRandomImage3() {
  }
 
   var button = document.getElementById('resultsButton');
+  var destroy = document.getElementById('destroy');
+
+   button.addEventListener('click;', clearLocalStorage)
    button.addEventListener('click', makeChart);
    image1.addEventListener('click', handleClickOnFirst);
    image2.addEventListener('click', handleClickOnSecond);
@@ -62,8 +65,11 @@ function getRandomImage3() {
      if (totalClicks > 3){
     resultsButton.removeAttribute('hidden');
   }
-  else {
-  }
+}
+function handleDestroyButton() {
+  if (totalClicks > 3){
+ destroy.removeAttribute('hidden');
+}
 }
 
    function handleClickOnFirst() {
@@ -72,6 +78,7 @@ function getRandomImage3() {
       console.log('handleClickOnFirst');
       getRandom();
       handleClick();
+      handleDestroyButton();
 
     }
    function handleClickOnSecond() {
@@ -80,6 +87,7 @@ function getRandomImage3() {
      console.log('handleClickOnSecond');
      getRandom();
      handleClick()
+     handleDestroyButton();
      };
 
    function handleClickOnThird() {
@@ -88,6 +96,7 @@ function getRandomImage3() {
       console.log('handleClickOnThird');
      getRandom();
      handleClick();
+     handleDestroyButton();
 
    }
    function getRandom() {
@@ -107,7 +116,7 @@ function getRandomImage3() {
    }
 
 function makeChart() {
-
+  localStorage.setItem('chartThings', JSON.stringify(imagesArray));
    var timesDisplayed = [[], [], []];
    for (var i = 0; i < imagesArray.length; i++) {
      timesDisplayed[0].push(imagesArray[i].name);
@@ -132,3 +141,20 @@ function makeChart() {
    var context = document.getElementById('popularity').getContext('2d');
   new Chart(context).Bar(data);
  };
+
+
+ function clearLocalStorage() {
+   console.log("cleared the local storage");
+   localStorage.clear();
+ }
+
+ function clearImagesArray () {
+   if (localStorage.chartThings) {
+     imagesArray = [];
+     imagesArray = JSON.parse(localStorage.chartThings);
+   } else {
+     console.log("Local storage is empty. YAY");
+     localStorage.setItem('chartThings', JSON.stringify(imagesArray));
+   }
+ }
+ clearImagesArray();
