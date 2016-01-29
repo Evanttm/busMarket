@@ -57,7 +57,6 @@ function getRandomImage3() {
    var image2Clicks = 0;
    var image3Clicks = 0;
 
-
    function handleClick() {
      if (totalClicks > 3){
     resultsButton.removeAttribute('hidden');
@@ -65,14 +64,12 @@ function getRandomImage3() {
   else {
   }
 }
-
    function handleClickOnFirst() {
      imagesArray[randomNumber1].numClicks += 1;
      totalClicks ++;
       console.log('handleClickOnFirst');
       getRandom();
       handleClick();
-
     }
    function handleClickOnSecond() {
      imagesArray[randomNumber2].numClicks += 1;
@@ -81,14 +78,12 @@ function getRandomImage3() {
      getRandom();
      handleClick()
      };
-
    function handleClickOnThird() {
      imagesArray[randomNumber3].numClicks += 1;
      totalClicks ++;
       console.log('handleClickOnThird');
      getRandom();
      handleClick();
-
    }
    function getRandom() {
      getRandomImage1();
@@ -97,13 +92,11 @@ function getRandomImage3() {
 
      while (image1.src === image2.src){
        getRandomImage2();
-
      }
      while(image2.src === image3.src || image1.src === image3.src) {
        getRandomImage3();
 
      };
-
    }
 
 function makeChart() {
